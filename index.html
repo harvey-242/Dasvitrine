@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accueil</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- External CSS and Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.css"
+    />
+
+    <style>
+      /* General Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+      }
+      :root {
+        --prime-color: #460646;
+        --black-color: #000;
+        --white-color: #fff;
+        --text-color: #35404e;
+        --pere-color: #2a2a2a;
+        --transition: 0.3s;
+        --transition2: 0.6s;
+      }
+
+      body {
+        overflow-x: hidden;
+      }
+
+      header {
+        background-image: url("img/das.jpeg");
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        height: 100vh;
+        border-bottom-left-radius: 50% 20%;
+        border-bottom-right-radius: 50% 20%;
+      }
+
+      nav .logo {
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--text-color);
+      }
+
+      nav ul {
+        display: flex;
+        list-style: none;
+        gap: 20px;
+      }
+
+      nav ul li a {
+        text-decoration: none;
+        color: var(--text-color);
+        font-weight: 500;
+        transition: var(--transition);
+      }
+
+      .menu-toggle {
+        font-size: 2rem;
+        color: #000;
+        cursor: pointer;
+        background: none;
+        border: none;
+      }
+
+      .hero_content {
+        text-align: center;
+        padding: 10% 5%;
+        color: var(--white-color);
+      }
+
+      .hero_content h1 {
+        font-size: 3rem;
+        margin: 0;
+        padding: 0;
+      }
+
+      .hero_content p {
+        font-size: 1.2rem;
+        margin-bottom: 30px;
+      }
+
+      .hero_content button {
+        padding: 10px 20px;
+        background: var(--prime-color);
+        color: var(--white-color);
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      .hero_content button:hover {
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Footer */
+      #footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px 12%;
+        background: var(--pere-color);
+        color: var(--white-color);
+      }
+
+      .footer p {
+        margin: 0;
+      }
+
+      /* Responsive Styles */
+      @media (max-width: 768px) {
+        nav ul.active {
+          display: flex;
+        }
+
+        .menu-toggle {
+          display: block;
+        }
+
+        .hero_content h1 {
+          font-size: 2rem;
+        }
+
+        .hero_content p {
+          font-size: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <!--ACCEUIL ET NAV-->
+    <header id="Accueil">
+      <nav class="navbar show">
+        <img id="logo" src="img/dasicone-removebg-preview.png" alt="" />
+
+        <ul class="menu" id="menu">
+          <li><a class="mya" href="#Accueil">Accueil</a></li>
+          <li><a class="mya" href="#propos">À propos de DAS</a></li>
+          <li><a class="mya" href="#service">Nos Services</a></li>
+          <!--<li><a class="mya" href="planer.html">AI-Forest Planner</a></li>
+          <li><a class="mya" href="blog.html">Blog & Actualités</a></li>-->
+          <li><a class="mya" href="#contact">Contact</a></li>
+        </ul>
+        <div class="" style="width: 25px"></div>
+        <div class="social_icon">
+          <a
+            href="https://www.facebook.com/profile.php?id=100063967938711"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <i class="ri-facebook-fill"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/data_analytitics_solutions?igsh=NGVhN2U2NjQ0Yg%3D%3D&utm_source=qr"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="ri-instagram-fill"></i
+          ></a>
+          <a
+            href="https://www.linkedin.com/company/das-data-analytics-solutions/"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="ri-linkedin-fill"></i
+          ></a>
+        </div>
+        <button class="menu-toggle">☰</button>
+      </nav>
+      <div class="hero_content">
+        <h1>Data Analytics Solutions</h1>
+        <h1><span id="text"></span></h1>
+      </div>
+    </header>
+
+    <!--A propos-->
+    <section class="propos" id="propos">
+      <div class="propos_top">
+        <div class="propos_image">
+          <img src="img/das.jpeg" alt="" />
+          <div class="propos_content" id="propos_content">
+            <h1>A propos de DAS</h1>
+            <p>
+              DAS (Data Analytics Solutions) est une entreprise spécialisée dans
+              les solutions numériques, créée par des étudiants visionnaires de
+              l’Université Inter-États Congo-Cameroun. Nous sommes passionnés
+              par l’innovation technologique et déterminés à aider les
+              entreprises à relever leurs défis en tirant parti des outils
+              numériques et de l’intelligence artificielle.
+            </p>
+            <p>
+              Notre mission est de transformer les données en leviers
+              stratégiques, d’automatiser les processus complexes et d’offrir
+              des solutions adaptées pour améliorer la performance et la
+              rentabilité des entreprises.
+            </p>
+            <div class="category">
+              <button type="button" class="skill_btn">Nos Objectifs</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="propos_bottom" class="propos_bottom">
+        <div class="skill_box" id="skill_box">
+          <h2>
+            Automatiser les processus pour améliorer l’efficacité et réduire les
+            coûts.
+          </h2>
+          <div class="pourcent"></div>
+        </div>
+        <div class="skill_box" id="skill_box">
+          <h2>
+            Aider à la prise de décision éclairée grâce à l’analyse de données
+            et aux outils d’intelligence artificielle.
+          </h2>
+          <div class="pourcent"></div>
+        </div>
+        <div class="skill_box" id="skill_box">
+          <h2>
+            Renforcer la présence numérique des entreprises à travers des sites
+            web modernes, des applications performantes, et des stratégies de
+            marketing digital.
+          </h2>
+          <div class="pourcent"></div>
+        </div>
+        <div class="skill_box" id="skill_box">
+          <h2>
+            Stimuler l'innovation et la créativité avec des designs uniques et
+            des solutions personnalisées.
+          </h2>
+          <div class="pourcent"></div>
+        </div>
+        <div class="skill_box" id="skill_box">
+          <h2>
+            Promouvoir une culture technologique en rendant accessibles les
+            outils numériques avancés aux entreprises de toutes tailles.
+          </h2>
+          <div class="pourcent"></div>
+        </div>
+      </div>
+    </section>
+
+    <!--Services-->
+    <section class="service" id="service">
+      <div class="headings">
+        <h1>Nos Services</h1>
+        <p>
+          Nos experts vous aident à résoudre des problématiques complexes grâce
+          à des modèles analytiques robustes et précis.
+        </p>
+      </div>
+      <div class="service_cards" id="service_cards">
+        <!--Service 1-->
+        <div class="service_card">
+          <i class="ri-line-chart-line"></i>
+          <div class="service_card_det">
+            <h2 class="h2">Exploration et Analyse de Données</h2>
+            <p>
+              Exploration, traitement et intégration d’outils d’intelligence
+              artificielle pour transformer vos données en décisions éclairées.
+            </p>
+          </div>
+        </div>
+        <!--Service 2-->
+        <div class="service_card">
+          <i id="icons" class="ri-smartphone-line"></i>
+          <div class="service_card_det">
+            <h2 class="h2">Développement d’applications mobiles</h2>
+            <p>
+              Conception et création d’applications intuitives et performantes
+              pour Android et iOS.
+            </p>
+          </div>
+        </div>
+        <!--Service 3-->
+        <div class="service_card">
+          <i id="icons" class="ri-code-s-slash-line"></i>
+          <div class="service_card_det">
+            <h2 class="h2">Développement de sites web</h2>
+            <p>
+              Développement de sites modernes, responsives et optimisés pour
+              renforcer votre présence en ligne.
+            </p>
+          </div>
+        </div>
+        <!--Service 4-->
+        <div class="service_card">
+          <i id="icons" class="ri-quill-pen-ai-line"></i>
+          <div class="service_card_det">
+            <h2 class="h2">Design graphique</h2>
+            <p>
+              Création de designs uniques pour valoriser votre image de marque
+              (logos, supports de communication, chartes graphiques).
+            </p>
+          </div>
+        </div>
+        <!--Service 5-->
+        <div class="service_card">
+          <i id="icons" class="ri-bar-chart-box-ai-line"></i>
+          <div class="service_card_det">
+            <h2 class="h2">Marketing numérique</h2>
+            <p>
+              Élaboration de stratégies digitales sur mesure incluant le SEO, le
+              SEA et la gestion des réseaux sociaux.
+            </p>
+          </div>
+        </div>
+        <!--Service 6-->
+        <div class="service_card">
+          <i id="icons" class="ri-robot-2-line"></i>
+          <div class="service_card_det">
+            <h2 class="h2">Intégration des outils et technologies d’IA</h2>
+            <p>
+              Suivi des performances en temps réel grâce à des visualisations
+              claires et personnalisées.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Temoignage-->
+    <section class="temoignages">
+      <div class="headings">
+        <h1>Temoignages</h1>
+      </div>
+      <div class="swiper testSwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <!--slide 1-->
+            <div class="test_slide">
+              <img
+                src="img/left-quote-svgrepo-com.svg"
+                alt=""
+                class="quate_img"
+              />
+              <div class="client_img">
+                <img id="client_img1" src="img/temoignage1.jpeg" alt="" />
+              </div>
+              <p>
+                Travailler avec DAS a été une expérience exceptionnelle. Grâce à
+                leurs outils d’analyse de données, nous avons pu optimiser nos
+                projets environnementaux.
+              </p>
+              <h2>Gides, Innovateur de l’environnement</h2>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <!--slide 2-->
+            <div class="test_slide">
+              <img
+                src="img/left-quote-svgrepo-com.svg"
+                alt=""
+                class="quate_img"
+              />
+              <div class="client_img">
+                <img id="client_img2" src="img/temoignage2.jpeg" alt="" />
+              </div>
+              <p>
+                DAS a conçu un design moderne et attractif pour notre
+                restaurant, ce qui a considérablement augmenté notre visibilité
+                en ligne et attiré de nouveaux clients. Leur équipe a également
+                élaboré une stratégie de marketing numérique qui a boosté nos
+                réservations. Nous les recommandons vivement!
+              </p>
+              <h2>L’eats, Restaurateur</h2>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <!--slide 3-->
+            <div class="test_slide">
+              <img
+                src="img/left-quote-svgrepo-com.svg"
+                alt=""
+                class="quate_img"
+              />
+              <div class="client_img">
+                <img id="client_img3" src="img/temoignage3.jpeg" alt="" />
+              </div>
+              <p>
+                Avec l’aide de DAS, notre entreprise de bijoux artisanaux a
+                franchi un cap important. Ils ont nous ont permis d'intégrer le
+                numérique dans nos travaux. Leur approche personnalisée et leur
+                souci du détail nous ont permis d’élargir notre clientèle
+                au-delà de nos attentes.
+              </p>
+              <h2>Khody, CEO de Tsèngue</h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--Contact-->
+    <section class="contact" id="contact">
+      <div class="headings">
+        <h1>Contact</h1>
+        <p>
+          Prenez rendez-vous avec nos experts dès aujourd’hui et découvrez
+          comment DAS peut transformer vos défis en opportunités.
+        </p>
+      </div>
+      <div class="contact_inputs">
+        <div class="inputs">
+          <input type="text" placeholder="Votre Nom" />
+          <input type="text" placeholder="Object de votre Message" />
+          <input type="number" placeholder="Votre Numéro" />
+        </div>
+        <textarea name="" id="" placeholder="Message"></textarea>
+      </div>
+      <div class="contact_btn">
+        <button>
+          <a href="mailto:contactdas.solutions@proton.me"
+            >Soumettre le formulaire</a
+          >
+        </button>
+      </div>
+
+      <div class="address_det" id="address_det">
+        <div class="address_box">
+          <i class="ri-smartphone-line"></i>
+          <h2>Téléphone</h2>
+          <p>+242 06 540 99 59</p>
+        </div>
+        <div class="address_box">
+          <i class="ri-home-4-line"></i>
+          <h2>Localisation</h2>
+          <p>Brazzaville, Congo</p>
+        </div>
+        <div class="address_box">
+          <i class="ri-mail-line"></i>
+          <h2>Addresse E-mail</h2>
+          <p>contactdas.solutions@proton.me</p>
+        </div>
+      </div>
+    </section>
+
+    <!--Section footer-->
+    <section class="footer" id="footer">
+      <p>&copy; Copyright 2025. Tous Droits Réservés Par <span>DAS</span></p>
+      <div class="footer_social">
+        <a
+          href="https://www.facebook.com/profile.php?id=100063967938711"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <i class="ri-facebook-fill"></i>
+        </a>
+        <a
+          href="https://www.instagram.com/data_analytitics_solutions?igsh=NGVhN2U2NjQ0Yg%3D%3D&utm_source=qr"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><i class="ri-instagram-fill"></i
+        ></a>
+        <a
+          href="https://www.linkedin.com/company/das-data-analytics-solutions/"
+          target="_blank"
+          rel="noopener noreferrer"
+          ><i class="ri-linkedin-fill"></i
+        ></a>
+      </div>
+    </section>
+
+    <!-- ------js en local pour la navrbar----- -->
+
+    <!-- scripts pour l'animation -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/11.0.5/swiper-bundle.min.js"></script>
+    <script>
+      var typed = new Typed("#text", {
+        strings: [
+          "Transformez vos données",
+          "En décisions intelligentes",
+          "Avec DAS",
+        ],
+        typeSpeed: 100,
+        backspeed: 100,
+        loop: true,
+      });
+    </script>
+    <script>
+      var swiper = new Swiper(".testSwiper", {
+        slidesPerview: 1,
+        loop: true,
+        autoplay: true,
+      });
+    </script>
+
+    <script src="scripts.js"></script>
+  </body>
+</html>

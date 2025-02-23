@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Planner</title>
+    <!-- External CSS and Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap-grid.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: "Poppins", sans-serif;
+      }
+      :root {
+        --prime-color: #0eee7e;
+        --black-color: #000;
+        --white-color: #fff;
+        --text-color: #35404e;
+        --pere-color: #2a2a2a;
+        --transition: 0.3s;
+        --transition2: 0.6s;
+      }
+      body {
+        line-height: 1.6rem;
+        color: var(--white-color);
+      }
+      .navbar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 0px 5px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background: transparent;
+        color: var(--prime-color);
+        z-index: 1000;
+        transition: background-color 0.3s ease;
+        border-bottom: 2px solid green;
+      }
+      #menu {
+        list-style: none;
+      }
+      .navbar.scrolled {
+        background: white; /* Opaque background */
+      }
+      .menu ul li {
+        text-decoration: none;
+        color: var(--text-color);
+        font-weight: 500;
+        transition: var(--transition);
+      }
+      .menu {
+        display: flex;
+        gap: 20px;
+      }
+
+      .menu a {
+        color: white;
+        font-size: 16px;
+      }
+      .logo a {
+        font-size: 2rem;
+        color: var(--text-color);
+        font-weight: 600;
+      }
+
+      .menu li a {
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--text-color);
+        text-decoration: none;
+        transition: var(--transition);
+      }
+      .menu li a:hover {
+        color: var(--prime-color);
+      }
+      #social_icon {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+      }
+      .social_icon i {
+        font-size: 1.2rem;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        border-radius: 100%;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--prime-color);
+        color: var(--white-color);
+        transform: var(--transition);
+      }
+      .social_icon i:hover {
+        color: var(--prime-color);
+        background-color: var(--white-color);
+        cursor: pointer;
+      }
+      .menu-toggle {
+        display: none;
+        font-size: 24px;
+        color: var(--prime-color);
+        background: none;
+        border: none;
+      }
+      #logo {
+        width: 20%;
+        height: auto;
+      }
+      .logo a {
+        font-size: 2rem;
+        color: var(--text-color);
+        font-weight: 600;
+        text-decoration: none;
+      }
+      #presentation {
+        margin-top: 50px;
+      }
+
+      @media (max-width: 768px) {
+        .menu {
+          display: none;
+          flex-direction: column;
+          background: var(--white-color);
+          position: absolute;
+          top: 60px;
+          right: 0;
+          width: 100%;
+          padding: 15px;
+          justify-items: center;
+          align-items: center;
+        }
+        #social_icon {
+          position: relative;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          right: 100px;
+        }
+        .menu.active {
+          display: flex;
+        }
+
+        .menu-toggle {
+          display: block;
+        }
+
+        .navbar .menu li .mya {
+          color: var(--prime-color);
+
+          font-size: 18px;
+        }
+
+        .navbar .menu li .mya:hover {
+          color: white;
+          text-decoration: none;
+          font-size: 18px;
+        }
+      }
+      main {
+        padding: 20px;
+        margin-top: 60px;
+      }
+      section {
+        margin-bottom: 40px;
+        background: var(--white-color);
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+      }
+      h1 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: var(--text-color);
+        border-bottom: 2px solid var(--prime-color);
+        padding-bottom: 5px;
+        text-align: center;
+      }
+      p {
+        color: var(--black-color);
+      }
+      li {
+        color: var(--text-color);
+      }
+      ul {
+        list-style-type: disc;
+        padding-left: 20px;
+      }
+      video {
+        display: block;
+        max-width: 100%;
+        margin: 10px 0;
+      }
+      .button {
+        display: inline-block;
+        background: var(--prime-color);
+        color: var(--white-color);
+        padding: 10px 20px;
+        align-items: center;
+        text-decoration: none;
+        border-radius: 5px;
+        transition: var(--transition);
+      }
+      .button:hover {
+        background: var(--white-color);
+      }
+      .partner {
+        display: flex;
+        align-items: center;
+        margin-bottom: 10px;
+      }
+      .partner img {
+        max-width: 100px;
+        margin-right: 10px;
+      }
+      footer {
+        text-align: center;
+        padding: 10px;
+        background: powderblue;
+        color: var(--white-color);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar show">
+        <div class="logo">
+          <img id="logo" src="img/dasicone-removebg-preview.png" alt="" />
+        </div>
+        <ul class="menu" id="menu">
+          <li><a class="mya" href="index.html">Accueil</a></li>
+          <li><a class="mya" href="planer.html">AI-Forest Planner</a></li>
+          <li><a class="mya" href="blog.html">Blog & Actualités</a></li>
+        </ul>
+        <div class="social_icon" id="social_icon">
+          <i class="ri-facebook-fill"></i>
+          <i class="ri-instagram-fill"></i>
+          <i class="ri-linkedin-fill"></i>
+        </div>
+        <button class="menu-toggle">☰</button>
+      </nav>
+    </header>
+    <main>
+      <section id="presentation">
+        <h1>Présentation Générale</h1>
+        <p>
+          <strong>Objectif principal :</strong> Offrir une solution simple et
+          efficace pour
+        </p>
+        <p>
+          <strong>Public Cible :</strong> Offrir une solution simple et efficace
+          pour
+        </p>
+      </section>
+      <!--Fonction Clés-->
+      <section id="features">
+        <h1>Fonctionnalités Clés</h1>
+        <ul>
+          <li>
+            Planification agricole intelligente (sélection des espèces,
+            calendrier optimal).
+          </li>
+          <li>
+            Suivi en temps réel des plantations (alertes climatiques, santé des
+            sols).
+          </li>
+          <li>
+            Marketplace intégrée pour l’achat/vente de produits agricoles.
+          </li>
+          <li>Assistant virtuel pour répondre aux questions agricoles 24/7.</li>
+        </ul>
+      </section>
+      <!--Demonstration-->
+      <section id="demo">
+        <h1>Demonstration</h1>
+        <p>Vidéo ou capture d’écran présentant l’interface de l’application.</p>
+        <video controls>
+          <source src="video/planer.mp4" type="video/mp4" />
+          Vidéo ou capture d’écran présentant l’interface de l’application.
+        </video>
+      </section>
+      <!--Téléchargement-->
+      <section id="download">
+        <h1>Téléchargement</h1>
+        <p>Lorem ipsum dolor sit amet consectetur :</p>
+        <a href="video/planer.zip" class="button">--Télécharger</a>
+      </section>
+
+      <!--Partenaires-->
+      <section id="partners">
+        <h1>Nos Partenaires</h1>
+        <div class="partner">
+          <img src=".jpg" alt="" />
+          <p>Partenaires 1 : description</p>
+        </div>
+        <div class="partner">
+          <img src=".jpg" alt="" />
+          <p>Partenaires 2 : description</p>
+        </div>
+      </section>
+    </main>
+    <footer>
+      <p>&copy; 2025 Copyright. Tous Droits Réservés Par <span>DAS</span></p>
+    </footer>
+    <script src="scripts.js"></script>
+  </body>
+</html>
